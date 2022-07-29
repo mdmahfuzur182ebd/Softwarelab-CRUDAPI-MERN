@@ -1,6 +1,7 @@
+
 const { v4: uuidv4 } = require("uuid");
 
-const User = require("../models/user.model");
+const User = require("../models/user.models");
 
 const getAllUsers = async (req, res) => {
   try {
@@ -38,7 +39,7 @@ const updateUser = async (req, res) => {
   try {
     const user = await User.findOne({ id: req.params.id });
     user.name = req.body.name;
-    user.age = Number(req.body.age);
+    user.age = Number( req.body.age);
     await user.save();
     res.status(200).json(user);
   } catch (error) {
@@ -62,3 +63,5 @@ module.exports = {
   updateUser,
   deleteUser,
 };
+
+
