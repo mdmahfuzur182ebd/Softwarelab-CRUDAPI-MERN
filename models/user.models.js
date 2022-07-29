@@ -5,14 +5,47 @@ const userSchema = mongoose.Schema({
     type: String,
     reuire: true,
   },
-  name: {
+
+  NurseName: {
     type: String,
     reuire: true,
   },
-  age: {
-    type: Number,
+
+  HospitalName: {
+    type: String,
     reuire: true,
   },
+
+  Location: {
+    type: String,
+    reuire: true,
+  },
+
+  NurseNid: {
+    type: String,
+    reuire: true,
+  },
+
+  Gender: {
+    type: String,
+    reuire: true,
+  }, 
+
+  Address: {
+    type: String,
+    reuire: true,
+  },
+
+  ContactNumber: {
+    type: String,
+    
+  },
+
+   DateofBirth: {
+    type: String,
+   
+  },
+
   createdOn: {
     type: Date,
     default: Date.now,

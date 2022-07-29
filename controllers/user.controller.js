@@ -25,8 +25,14 @@ const createUser = async (req, res) => {
   try {
     const newUser = new User({
       id: uuidv4(),
-      name: req.body.name,
-      age: Number(req.body.age),
+      NurseName: req.body.NurseName,
+      HospitalName: req.body.HospitalName,
+      Location: req.body.Location,
+      NurseNid: req.body.NurseNid,
+      Gender: req.body.Gender,
+      Address: req.body.Address,
+      ContactNumber: req.body.ContactNumber,
+      DateofBirth: req.body.DateofBirth,
     });
     await newUser.save();
     res.status(201).json(newUser);
@@ -38,8 +44,15 @@ const createUser = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
     const user = await User.findOne({ id: req.params.id });
-    user.name = req.body.name;
-    user.age = Number( req.body.age);
+    user.NurseName = req.body.NurseName;
+    user.HospitalName = req.body.HospitalName;
+    user.Location = req.body.Location;
+    user.NurseNid = req.body.NurseNid;
+    user.Gender = req.body.Gender;
+    user.Address = req.body.Address;
+    user.ContactNumber = req.body.ContactNumber;
+    user.DateofBirth = req.body.DateofBirth;
+    
     await user.save();
     res.status(200).json(user);
   } catch (error) {
