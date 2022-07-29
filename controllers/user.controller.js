@@ -13,6 +13,7 @@ const getOneUsers = (req , res) => {
 
 
 const createUsers = (req , res) => {
+     
    res.status(201).json({
       message: "User is Created",
     });
