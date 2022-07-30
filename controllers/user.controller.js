@@ -28,11 +28,11 @@ const createUser = async (req, res) => {
       NurseName: req.body.NurseName,
       HospitalName: req.body.HospitalName,
       Location: req.body.Location,
-      NurseNid: req.body.NurseNid,
+      NurseNid: Number(req.body.NurseNid),
       Gender: req.body.Gender,
       Address: req.body.Address,
-      ContactNumber: req.body.ContactNumber,
-      DateofBirth: req.body.DateofBirth,
+      ContactNumber: Number(req.body.ContactNumber),
+      DateofBirth: Date(req.body.DateofBirth),
     });
     await newUser.save();
     res.status(201).json(newUser);
@@ -48,10 +48,11 @@ const updateUser = async (req, res) => {
     user.HospitalName = req.body.HospitalName;
     user.Location = req.body.Location;
     user.NurseNid = req.body.NurseNid;
+    user.NurseNid = Number(req.body.NurseNid);
     user.Gender = req.body.Gender;
     user.Address = req.body.Address;
-    user.ContactNumber = req.body.ContactNumber;
-    user.DateofBirth = req.body.DateofBirth;
+    user.ContactNumber = Number(req.body.ContactNumber);
+    user.DateofBirth = Date(req.body.DateofBirth);
     
     await user.save();
     res.status(200).json(user);

@@ -13,11 +13,7 @@ app.use(express.json());
 app.use("/api/Nurse", userRouter);
 
 
-//api/users : GET
-//api/user/:id : GET
-//api/users : POST
-//api/users/:id : PATCH
-//api/users/id : DELETE
+
 
 
 //home router setup

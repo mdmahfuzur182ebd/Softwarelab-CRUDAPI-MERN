@@ -22,7 +22,7 @@ const userSchema = mongoose.Schema({
   },
 
   NurseNid: {
-    type: String,
+    type: Number,
     reuire: true,
   },
 
@@ -37,12 +37,12 @@ const userSchema = mongoose.Schema({
   },
 
   ContactNumber: {
-    type: String,
+    type: Number,
     
   },
 
    DateofBirth: {
-    type: String,
+    type: Date,
    
   },
 
